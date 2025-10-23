@@ -136,9 +136,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./${{ matrix.service }}
-          file: ./${{ matrix.service }}/Dockerfile
+          file: ./${{ matrix.service }}/Dockerf ile
           push: true
-          tags: 3002tad/eproject-${{ matrix.service }}:latest
+          tags: huytrongbeou/eproject-${{ matrix.service }}:latest
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
