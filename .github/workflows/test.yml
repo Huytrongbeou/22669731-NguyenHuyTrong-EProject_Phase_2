@@ -113,7 +113,7 @@ jobs:
       needs: [test-auth, test-product]
       runs-on: ubuntu-latest
       env:
-        DOCKER_USERNAME: 3002tad
+        DOCKER_USERNAME: huytrongbeou
       strategy:
         matrix:
           service: [auth, product, order, api-gateway]
