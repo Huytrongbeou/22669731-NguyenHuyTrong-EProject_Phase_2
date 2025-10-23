@@ -136,7 +136,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./${{ matrix.service }}
-          file: ./${{ matrix.service }}/Dockerf ile
+          file: ./${{ matrix.service }}/Dockerfile
           push: true
           tags: huytrongbeou/eproject-${{ matrix.service }}:latest
           platforms: linux/amd64
