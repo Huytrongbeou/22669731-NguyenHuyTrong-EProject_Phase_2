@@ -95,7 +95,7 @@ class ProductController {
 // 
   async getProductsById(req,res){
     try {
-      const {id} = req.[params];
+      const {id} = req.params;
       const products = await this.productService.getProductById(id);
       if(!product){
         return res.status(404).json({message:"Not found"});
