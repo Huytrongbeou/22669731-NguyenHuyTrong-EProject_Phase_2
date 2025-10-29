@@ -1,5 +1,6 @@
 const ProductService = require("../services/productsService");
 const axios = require("axios");
+const messageBroker = require("../utils/messageBroker");
 class ProductController {
   constructor() {
     this.productService = new ProductService();
@@ -91,18 +92,18 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
-
+// 
   async getProductsById(req,res){
     try {
-      const {id} = req.params;
+      const {id} = req.[params];
       const products = await this.productService.getProductById(id);
-      if (!product){
-        return res.status(404).json({message:"Product not found"});
+      if(!product){
+        return res.status(404).json({message:"Not found"});
       }
-      res.status(200).json(products)
+      res.status(200).json(products);
     } catch (error) {
       console.log(error);
-      res.status(500).json({message:"Server error"});
+      res.status(500).json({message:"Error"})
     }
   }
 
