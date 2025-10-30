@@ -8,7 +8,7 @@ class ProductController {
     this.getProducts = this.getProducts.bind(this);
     this.createOrder = this.createOrder.bind(this);
     this.getOrderById = this.getOrderById.bind(this);
-    this.getProductsById = this.getProductsById.this.bind(this);
+    this.getProductsById = this.getProductsById.bind(this);
 
   }
   async createProduct(req, res) {
