@@ -9,7 +9,7 @@ class ProductController {
     this.createOrder = this.createOrder.bind(this);
     this.getOrderById = this.getOrderById.bind(this);
 
-    this.getProductsById = thig.getProductsById.bind(this);
+    this.getProductsById = this.getProductsById.bind(this);
   }
   async createProduct(req, res) {
     try {
