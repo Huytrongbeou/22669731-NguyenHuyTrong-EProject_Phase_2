@@ -100,7 +100,7 @@ class ProductController {
       const {id} = req.params;
       const products = await this.productService.getProductsById(id);
       if (!products) {
-        return res.status(404).json({ "NOt found"});
+        return res.status(404).json({ message: "Not found"});
       }
       res.status(200).json(products);
     } catch (error) {
@@ -108,6 +108,7 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
+  
 
 
 
