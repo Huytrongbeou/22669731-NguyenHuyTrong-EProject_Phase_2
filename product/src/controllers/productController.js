@@ -8,8 +8,8 @@ class ProductController {
     this.getProducts = this.getProducts.bind(this);
     this.createOrder = this.createOrder.bind(this);
     this.getOrderById = this.getOrderById.bind(this);
-    this.getProductsById=this.getProductsById.bind(this);
-
+    
+    this.getProductById = this.getProductById.bind(this);
   }
   async createProduct(req, res) {
     try {
@@ -93,18 +93,18 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
-  async getProductsById(req,res){
+  
+  asynce getProductById(req,res){
     try {
       const {id}=req.params;
-      const products = await  this.productService.getProductById(id);
-      if(!products){
-        return res.status(404).jsoN({message:"Not found"});
-
+      const product = await this.productService.getProductById(id);
+      if(!product){
+        return res.status(404).json({message:"Not found"});
       }
-      return res.stauts(200).json(products);
+      return res.status(200).json(product);
     } catch (error) {
       console.log(error);
-      return res.status(500).json({message:"ERROR SERVER"});
+      return res.status(500).json({message:"Error Server"});
     }
   }
   
