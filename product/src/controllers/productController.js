@@ -94,7 +94,7 @@ class ProductController {
     }
   }
   
-  async getProducts(req, res) {
+  async getProductsById(req, res) {
     try {
       const {id}=req.params;
       const products = await this.productService.getProducts(id);
