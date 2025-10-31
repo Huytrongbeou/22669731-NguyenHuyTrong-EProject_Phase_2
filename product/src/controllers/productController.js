@@ -98,7 +98,7 @@ class ProductController {
     try {
       const {id}=req.params;
       const products = await this.productService.getProductsById(id);
-      if (!products.success) {
+      if (!products) {
         return res.status(404).json({ message: "Not found"});
       }
       res.status(200).json(products);
