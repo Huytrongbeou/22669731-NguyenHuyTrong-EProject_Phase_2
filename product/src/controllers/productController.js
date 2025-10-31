@@ -9,7 +9,7 @@ class ProductController {
     this.createOrder = this.createOrder.bind(this);
     this.getOrderById = this.getOrderById.bind(this);
     
-    this.getProductById = this.getProductById.bind(this);
+    this.getProductsById = this.getProductsById.bind(this);
   }
   async createProduct(req, res) {
     try {
@@ -94,20 +94,21 @@ class ProductController {
     }
   }
   
-  async getProductById(req,res){
+  async getProductsById(req,res){
     try {
-      const {id}=req.params;
-      const product = await this.productService.getProductById(id);
-      if(!product){
+      const {id} = req.params;
+      const products = await this.productService.getProductsById(id);
+      if (!product){
         return res.status(404).json({message:"Not found"});
       }
-      return res.status(200).json(product);
+      return res.status(200).json(products);
     } catch (error) {
       console.log(error);
-      return res.status(500).json({message:"Error Server"});
+      return res.status(500).json({message:"Error server"});
     }
   }
-  
+
+
 }
 
 module.exports = ProductController;
