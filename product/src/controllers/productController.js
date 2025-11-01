@@ -8,7 +8,6 @@ class ProductController {
     this.getProducts = this.getProducts.bind(this);
     this.createOrder = this.createOrder.bind(this);
     this.getOrderById = this.getOrderById.bind(this);
-    
     this.getProductsById = this.getProductsById.bind(this);
 
 
@@ -98,10 +97,10 @@ class ProductController {
 
   async getProductsById(req, res) {
     try {
-      const {id} = req.params;
-      const products = await this.productService.getProductsById(id);
-      if (!products.success) {
-        return res.status(404).json({ message: "Not found" });
+      const {id} =req.params;
+      const products = await this.productService.getProductsById(iid);
+      if (!products) {
+        return res.status(404).json({ message: "nO" });
       }
       res.status(200).json(products);
     } catch (error) {
